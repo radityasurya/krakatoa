@@ -1,52 +1,64 @@
 <template>
-  <div>
-    <nuxt/>
+  <div class="wrapper">
+    <app-header></app-header>
+    <aside class="sidebar container">Sidebar</aside>
+    <section class="content container"><nuxt /></section>
+    <footer class="container">Footer</footer>
   </div>
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+import header from "~/components/Header";
+
+export default {
+  components: {
+    "app-header": header
+  }
+};
+</script>
+
+
+<style lang="scss" scoped>
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(24, [col-start] 1fr) [col-end];
+  grid-column-gap: 10px;
 }
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
+.container {
+  background-color: white;
+  border: 1px solid #f6f6f8;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+  padding: 0.75em;
+  transition: all 1s;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+@include breakpoint(desktop) {
+  .sidebar {
+    grid-column: col-start / 6;
+  }
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+header {
+  grid-column: col-start / col-end;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.sidebar {
+  grid-column: col-start / col-end;
+  @include breakpoint(desktop) {
+    grid-column: col-start / 6;
+  }
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.content {
+  grid-column: col-start / col-end;
+  @include breakpoint(desktop) {
+    grid-column: 6 / col-end;
+    min-height: 500px;
+  }
+}
+
+footer {
+  grid-column: col-start / col-end;
 }
 </style>
