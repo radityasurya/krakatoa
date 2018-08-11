@@ -1,18 +1,23 @@
 <template>
   <div class="wrapper">
-    <app-header></app-header>
-    <aside class="sidebar container">Sidebar</aside>
-    <section class="content container"><nuxt /></section>
-    <footer class="container">Footer</footer>
+    <sidebar></sidebar>
+    <section class="content">
+      <!-- <app-header></app-header> -->
+      <div class="content__container">
+        <nuxt />
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import header from "~/components/Header";
+import sidebar from "~/components/Sidebar";
 
 export default {
   components: {
-    "app-header": header
+    "app-header": header,
+    sidebar
   }
 };
 </script>
@@ -20,23 +25,10 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
+  height: 100%;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(24, [col-start] 1fr) [col-end];
-  grid-column-gap: 10px;
-}
-
-.container {
-  background-color: white;
-  border: 1px solid #f6f6f8;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
-  padding: 0.75em;
-  transition: all 1s;
-}
-
-@include breakpoint(desktop) {
-  .sidebar {
-    grid-column: col-start / 6;
-  }
 }
 
 header {
@@ -45,20 +37,60 @@ header {
 
 .sidebar {
   grid-column: col-start / col-end;
-  @include breakpoint(desktop) {
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  background: white;
+
+  @include breakpoint(sm) {
+    height: 100vh;
+    grid-column: col-start / 8;
+  }
+
+  @include breakpoint(md) {
+    height: 100vh;
     grid-column: col-start / 6;
+  }
+
+  @include breakpoint(lg) {
+    height: 100vh;
+    grid-column: col-start / 6;
+  }
+
+  @include breakpoint(xl) {
+    height: 100vh;
+    grid-column: col-start / 4;
   }
 }
 
 .content {
   grid-column: col-start / col-end;
-  @include breakpoint(desktop) {
-    grid-column: 6 / col-end;
-    min-height: 500px;
-  }
-}
+  color: black;
+  background: #f7f3ff;
 
-footer {
-  grid-column: col-start / col-end;
+  @include breakpoint(sm) {
+    grid-column: 8 / col-end;
+  }
+
+  @include breakpoint(md) {
+    grid-column: 6 / col-end;
+  }
+
+  @include breakpoint(lg) {
+    grid-column: 6 / col-end;
+  }
+
+  @include breakpoint(xl) {
+    grid-column: 4 / col-end;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include breakpoint(sm) {
+      padding: 50px;
+    }
+  }
 }
 </style>
