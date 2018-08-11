@@ -1,12 +1,10 @@
-@import "breakpoint";
-
-$merah: red;
-
+@import "mixins/breakpoint";
 html {
   box-sizing: border-box;
   min-height: 100vh;
 }
 
 body {
-  background-color: #f1f4f9;
+  background-color: #f7f3ff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
