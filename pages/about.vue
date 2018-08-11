@@ -1,6 +1,5 @@
 <template>
     <div>
-      <app-logo/>
       <h1 class="title">
         krakatoa
       </h1>
