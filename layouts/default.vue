@@ -11,12 +11,10 @@
 </template>
 
 <script>
-import header from "~/components/Header";
 import sidebar from "~/components/Sidebar";
 
 export default {
   components: {
-    "app-header": header,
     sidebar
   }
 };

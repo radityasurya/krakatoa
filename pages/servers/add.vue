@@ -3,7 +3,7 @@
         <el-row type="flex" align="middle">
             <h2 class="title" style="display: inline-block"><nuxt-link to="/servers">Servers </nuxt-link> <i class="el-icon-arrow-right" style="font-size: 0.8em"></i> Add</h2> 
         </el-row>
-            <el-form ref="form" :model="form" label-width="120px">
+            <el-form ref="form" :model="form" label-width="100px">
                 <el-form-item label="Server Name" >
                     <el-input   v-model="form.name"></el-input>
                 </el-form-item>
@@ -73,7 +73,7 @@ form {
   margin-top: 50px;
   background: white;
   border-radius: 5px;
-  padding: 50px;
+  padding: 20px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
 </style>
