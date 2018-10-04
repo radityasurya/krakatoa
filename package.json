@@ -19,7 +19,7 @@
     "font-awesome": "^4.7.0",
     "node-sass": "^4.9.0",
     "normalize.css": "^8.0.0",
-    "nuxt": "^1.0.0",
+    "nuxt": "^2.1.0",
     "nuxt-buefy": "^0.0.4",
     "nuxt-sass-resources-loader": "^2.0.0",
     "resolve": "^1.8.1",
@@ -27,9 +27,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
+    "eslint": "^5.6.1",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1"
