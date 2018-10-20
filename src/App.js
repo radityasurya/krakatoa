@@ -1,16 +1,12 @@
 // @flow
 
 import React, { Component } from "react";
-import "./App.css";
-import HelloWorldList from "./HelloWorldList";
+import "normalize.css";
+import "./App.scss";
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <HelloWorldList />
-      </div>
-    );
+    return <div className="App">Hello</div>;
   }
 }
 
