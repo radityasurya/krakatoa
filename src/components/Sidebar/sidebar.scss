@@ -1,0 +1,60 @@
+.Sidebar {
+    grid-area: sidebar;
+    border-right: 1px solid #e8e8e8;
+    background: #ffffff;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-grow: 1;
+    min-width: 230px;
+
+    &__container {
+        width: 100%;
+    }
+
+    &__logo {
+        height: 74px;
+        display: flex;
+        align-items: center;
+        padding-left: 25px;
+
+        a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all .2s ease-out;
+            color: #000;
+
+            &:hover {
+                color: #666;
+            }
+        }
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                display: block;
+                padding: 15px 25px;
+                text-decoration: none;
+
+                &:hover {
+                    background: #e8e8e8;
+                }
+            }
+
+
+        }
+    }
+}

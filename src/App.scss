@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: #f5f6fa;
+}
+
+.App {
+  min-height: 100%;
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content"
+    "sidebar footer";
+
+  grid-template-columns: 230px auto;
+  grid-template-rows: auto;
+  height: 100vh;
+}
+
+.main__container {
+  grid-area: content;
+  padding: 50px;
+  height: 700px;
+
+  h3 {
+    margin: 0;
+  }
+}
